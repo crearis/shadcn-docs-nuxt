@@ -1,17 +1,18 @@
 export default defineAppConfig({
   shadcnDocs: {
     site: {
-      name: 'shadcn-docs',
-      description: 'Beautifully designed Nuxt Content template built with shadcn-vue. Customizable. Compatible. Open Source.',
+      name: 'shadcn-dasei',
+      description: 'Preview für dasei.eu',
       ogImage: '/hero.png',
     },
     theme: {
       customizable: true,
-      color: 'zinc',
-      radius: 0.5,
+      color: 'yellow',
+      radius: 0,
+      name: 'dasei',
     },
     header: {
-      title: 'shadcn-docs',
+      title: 'shadcn-dasei',
       showTitle: true,
       logo: {
         light: '/logo.svg',
@@ -148,7 +149,7 @@ export default defineAppConfig({
     },
     search: {
       enable: true,
-      inAside: false,
+      inAside: true,
     },
   },
 });

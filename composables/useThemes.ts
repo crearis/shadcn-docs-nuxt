@@ -13,7 +13,7 @@ export function useThemes() {
   const config = useCookie<Config>('theme', {
     default: () => ({
       theme: defaultTheme.color as Color,
-      radius: defaultTheme.radius,
+      radius: defaultTheme.radius
     }),
   });
 
