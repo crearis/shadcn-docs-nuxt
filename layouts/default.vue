@@ -1,5 +1,5 @@
 <template>
-  <LayoutHeader :class="isDasei ? 'md:hidden' : ''" />
+  <!--LayoutHeader :class="isDasei ? 'md:hidden' : ''" / -->
   <div class="border-b min-h-screen">
     <div :class="isDasei ? 'pl-0 md:grid-cols-[246px_minmax(0,1fr)] lg:grid-cols-[290px_minmax(0,1fr)] ' : 'md:grid-cols-[220px_minmax(0,1fr)] lg:grid-cols-[246px_minmax(0,1fr)] '" class="container flex-1 items-start md:grid md:gap-6 lg:gap-10">
       <!-- aside class="fixed z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 md:sticky md:block overflow-y-auto" -->
@@ -8,6 +8,13 @@
       </aside>
       <main class="relative py-6" :class="[config.toc.enable && 'lg:gap-10 lg:py-8 lg:grid lg:grid-cols-[1fr_200px]']">
         <div class="mx-auto w-full min-w-0">
+
+          <AiBlogCard />
+          <AiEventCard />
+          <AiPageHero />
+          <AiCheckoutEvent />
+          <AiTableFancyEvents />
+          <AiTableEvents />
           <LayoutBreadcrumb v-if="page?.body && config.main.breadCrumb" class="mb-4" />
 
           <slot />
@@ -26,6 +33,7 @@
 </template>
 
 <script setup lang="ts">
+
 const { page } = useContent();
 const config = useConfig();
 
