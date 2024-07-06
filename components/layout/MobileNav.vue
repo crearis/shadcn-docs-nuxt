@@ -9,13 +9,14 @@
         <Icon name="lucide:menu" size="18" />
       </UiButton>
     </UiSheetTrigger>
-    <UiSheetContent side="left" class="pr-0">
-      <LayoutHeaderLogo />
-      <LayoutAsideMenu is-mobile />
+    <UiSheetContent side="left" :class="isDasei ? 'p-0 min-w-80' : 'pr-0'">
+      <LayoutHeaderLogo v-show="!isDasei" />
+      <LayoutMenuAside is-mobile />
     </UiSheetContent>
   </UiSheet>
 </template>
 
 <script setup lang="ts">
 const open = ref(false);
+const isDasei = useConfig().value.theme.name === 'dasei';
 </script>

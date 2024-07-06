@@ -32,10 +32,8 @@ export const menuTreeItemVariants = isDasei
       variants: {
         variant: {
           default: 'hover:underline text-muted-foreground',
-          section:
-          'px-3 py-2 mb-1 hover:bg-muted rounded-md gap-2 transition-all',
-          label:
-          'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+          section: 'px-3 py-2 mb-1 hover:bg-muted rounded-md gap-2 transition-all',
+          label: 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
           tile:
           '',
         },

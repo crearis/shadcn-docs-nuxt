@@ -1,3 +1,12 @@
+<!--
+Licensed under the MIT License (MIT)
+Copyright (c) 2024 Theaterpedia.org based on the original work of Tony Zhang (https://github.com/ZTL-UwU)
+
+This component is used to render a single menu item in the menu tree.
+It abstracts the logic from MenuAside, MenuTree, and MenuTreeItem.
+It is partly themeable in shadcn-style, settings should be tweaked in the index.ts-file.
+-->
+
 <template>
   <li
     class="rounded-md transition-all underline-offset-4 [&:not(:first-child)]:pt-3"

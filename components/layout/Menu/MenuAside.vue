@@ -1,6 +1,6 @@
 <template>
   <UiScrollArea orientation="vertical" :class="isDasei ? 'bg-secondary pl-4 md:pl-6' : 'px-6'" class="relative overflow-hidden h-full py-6 text-sm" type="hover">
-    <LayoutHeaderNavMobile v-if="isMobile" class="border-b pb-2 mb-5" />
+    <LayoutHeaderNavMobile v-if="isMobile && !isDasei" class="border-b pb-2 mb-5" />
     <LayoutSearchButton v-if="config.search.inAside" />
     <LayoutHeaderLogo v-if="isDasei" variant="aside" />
     <UiNavigationMenu orientation="vertical" :class="isDasei ? '' : ''">
