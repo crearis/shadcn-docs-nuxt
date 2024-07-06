@@ -1,6 +1,8 @@
 import type { Config } from 'tailwindcss';
 import animate from 'tailwindcss-animate';
 
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 export default {
   darkMode: 'class',
   safelist: ['dark'],
@@ -15,6 +17,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Roboto', ...defaultTheme.fontFamily.sans],
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

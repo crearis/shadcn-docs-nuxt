@@ -9,25 +9,30 @@ export default defineAppConfig({
       customizable: true,
       color: 'yellow',
       radius: 0,
-      name: 'dasei',
+      name: 'dasei', // has to be set manually in /components/layout/Menu/index.ts
     },
     header: {
       title: 'shadcn-dasei',
-      showTitle: true,
+      showTitle: false,
       logo: {
-        light: '/logo.svg',
-        dark: '/logo-dark.svg',
+        light: '/logo-dasei.svg',
+        dark: '/logo-dasei-dark.svg',
       },
       darkModeToggle: true,
       nav: [{
         title: 'Docs',
         links: [{
-          title: 'Getting Started',
+          title: 'Ausbildung Theaterpädagogik',
           to: '/getting-started',
           description: 'Start building your document with shadcn-docs-nuxt',
         }, {
-          title: 'API',
+          title: 'Workshops & Projekte',
           to: '/api',
+          description: 'Discover the configurations and exposed APIs.',
+          target: '_self',
+        }, {
+          title: 'Institut',
+          to: '/institut',
           description: 'Discover the configurations and exposed APIs.',
           target: '_self',
         }],
@@ -67,6 +72,7 @@ export default defineAppConfig({
     },
     aside: {
       useLevel: true,
+      maxLevel: 1,
       collapse: false,
     },
     main: {

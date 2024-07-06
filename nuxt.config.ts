@@ -5,11 +5,13 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxthq/studio',
     'shadcn-nuxt',
+    'nuxt-viewport',
     '@vueuse/nuxt',
     '@nuxt/content',
     '@nuxt/image',
     '@nuxt/icon',
     '@nuxtjs/color-mode',
+    '@nuxtjs/google-fonts',
   ],
   shadcn: {
     /**
@@ -29,6 +31,10 @@ export default defineNuxtConfig({
         ignore: ['**/*.ts'],
       },
     ],
+  },
+  googleFonts: {
+    Roboto: true,
+    Inter: [400, 700], // Options
   },
   colorMode: {
     classSuffix: '',
