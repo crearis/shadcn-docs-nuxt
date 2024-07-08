@@ -9,6 +9,11 @@ announcement:
   title: 'Release v0.3.1'
   icon: 'noto:party-popper'
   to: /getting-started
+heading:
+  shortcode: 'A1'
+  overline: 'Overline-Text Overline-Text'
+  headline: 'Effortless and Beautiful Docs Template.'
+  subline: 'Teasertext Teasertext Teasertext Teasertext Teasertext Teasertext Teasertext Teasertext. Customizable. Compatible. Open Source.'
 actions:
   - name: Get Started
     to: /getting-started
@@ -17,12 +22,6 @@ actions:
     to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
     leftIcon: 'lucide:github'
 ---
-
-#title
-Effortless and Beautiful<br>Docs Template.
-
-#description
-Beautifully designed Nuxt Content template built with shadcn-vue.<br>Customizable. Compatible. Open Source.
 ::
 
 <div class="border rounded-lg shadow-md">

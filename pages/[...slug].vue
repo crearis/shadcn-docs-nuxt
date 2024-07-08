@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout>
-    <div v-if="config.main.showTitle" class="space-y-2 mb-6">
+    <div v-if="config.main.showTitle && !page?.hide_pagetitle" class="space-y-2 mb-6">
       <ProseH1>
         {{ page?.title }}
       </ProseH1>
