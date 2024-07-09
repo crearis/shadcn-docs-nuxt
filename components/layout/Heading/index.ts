@@ -7,7 +7,7 @@ export const headingVariants = cva(
   {
     variants: {
       variant: {
-        small_xs: 'text-lg pb-1 font-semibold',
+        small_xs: 'text-lg pb-1 font-semibold leading-[0.9em]',
         small_md: 'text-xl pb-1.5',
         default_sm: 'text-2xl pb-2 font-semibold tracking-tight',
         default_lg: 'text-3xl pb-2.5 leading-[0.86em] font-semibold',

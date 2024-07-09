@@ -12,13 +12,13 @@
               !isDasei && path.startsWith(link._path) && 'bg-muted hover:bg-muted font-semibold text-primary',
             ]"
             :level="0"
-            :size="isDasei ? size : 'default'"
+            :size="isDasei ? (useViewport().match('tablet') ? 'small' : 'default') : 'default'"
             variant="section"
           />
-          <LayoutMenuTree v-if="isDasei && path.startsWith(link._path)" :size="size" :links="tree" :level="0" />
+          <LayoutMenuTree v-if="isDasei && path.startsWith(link._path)" :size="useViewport().match('tablet') ? 'small' : 'default'" :links="tree" :level="0" />
         </template>
       </ul>
-      <LayoutMenuTree v-if="!isDasei" :links="tree" :size="size" :level="0" class="pl-3 pt-4" />
+      <LayoutMenuTree v-if="!isDasei" :links="tree" :size="useViewport().match('tablet') ? 'small' : 'default'" :level="0" class="pl-3 pt-4" />
     </UiNavigationMenu>
   </UiScrollArea>
 </template>
@@ -31,9 +31,6 @@ const { navigation } = useContent();
 const config = useConfig();
 
 const isDasei = config.value.theme.name === 'dasei';
-
-const viewport = useViewport();
-const size = ref(viewport.match('tablet') ? 'small' : 'default');
 
 const tree = computed(() => {
   const route = useRoute();

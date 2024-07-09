@@ -1,5 +1,5 @@
 <template>
-  <section class="mx-auto flex max-w-[980px] flex-col gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
+  <section class="mx-auto flex max-w-[980px] flex-col gap-2 " :class="(announcement || showEmptyOverlineWithoutAnnouncement) ? 'py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20' : 'mt-[-12px] md:mt-[-6px] lg:mt-0' ">
     <NuxtLink
       v-if="announcement"
       :to="announcement.to"
@@ -16,8 +16,10 @@
       </span>
       <Icon name="lucide:arrow-right" class="ml-1 h-4 w-4" />
     </NuxtLink>
-
-    <LayoutHeading :variant="headingsize" :shortcode="heading.shortcode" :headline="heading.headline" :overline="heading.overline" :subline="heading.subline" :class="props.size !== 'small' ? 'uppercase' : ''" />
+    <div v-show="announcement?.title === undefined && (showEmptyOverlineWithoutAnnouncement || heading.overline || heading.shortcode)" class="mt-2 md:mt-3 lg:mt-4" />
+    <LayoutHeading v-if="useViewport().isGreaterThan('tablet')" :variant="(props.size === 'default') ? 'default_lg' : (props.size === 'display' ? 'display_xl' : 'small_md')" :show-empty-overline="announcement?.title !== undefined || showEmptyOverlineWithoutAnnouncement" :shortcode="heading.shortcode" :headline="heading.headline" :overline="heading.overline" :subline="heading.subline" :class="props.size !== 'small' ? 'uppercase' : ''" />
+    <LayoutHeading v-else-if="useViewport().isLessThan('tablet')" :variant="(props.size === 'small' || props.heading.shortcode ? 'small_xs' : props.size === 'default' ? 'default_sm' : 'display_md')" :show-empty-overline="announcement?.title !== undefined || showEmptyOverlineWithoutAnnouncement" :shortcode="heading.shortcode" :headline="heading.headline" :overline="heading.overline" :subline="heading.subline" :class="props.size !== 'small' ? 'uppercase' : ''" />
+    <LayoutHeading v-else :variant="(props.size === 'default' ? 'default_sm' : props.size === 'display' ? 'display_md' : 'default_sm')" :shortcode="heading.shortcode" :headline="heading.headline" :show-empty-overline="announcement?.title !== undefined || showEmptyOverlineWithoutAnnouncement" :overline="heading.overline" :subline="heading.subline" :class="props.size !== 'small' ? 'uppercase' : ''" />
 
     <section class="flex self-start items-center justify-center space-x-4 py-4 md:pb-10">
       <NuxtLink
@@ -37,10 +39,9 @@
 </template>
 
 <script setup lang="ts">
-import { headingVariants } from '../layout/Heading';
-
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   size?: 'small' | 'default' | 'display';
+  showEmptyOverlineWithoutAnnouncement?: boolean;
   heading: {
     shortcode?: string;
     overline?: string;
@@ -61,10 +62,8 @@ const props = defineProps<{
     to: string;
     target?: string;
   }];
-}>();
-
-const viewport = useViewport();
-const headingsize = viewport.isLessThan('desktop')
-  ? (!props.size || props.size === 'small' ? 'small_xs' : props.size === 'display' ? 'display_md' : 'default_sm')
-  : ((!props.size || props.size === 'default') ? 'default_lg' : props.size === 'display' ? 'display_xl' : 'small_md');
+}>(), {
+  size: 'default',
+  showEmptyOverlineWithoutAnnouncement: true,
+});
 </script>

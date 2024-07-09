@@ -13,8 +13,8 @@ export default {
       center: true,
       padding: '2rem',
       screens: {
-        'xl': '1200px',
-        '2xl': '1400px',
+        'xl': '1320px',
+        '2xl': '1536px',
       },
     },
     extend: {

@@ -1,18 +1,18 @@
 <template>
   <component :is="props.as" class="w-full">
-    <span v-if="props.shortcode && !props.variant?.startsWith('display')" :class="cn(props.variant ? cls.shortcode[props.variant] : '')">
+    <span v-if="props.shortcode && !props.variant?.startsWith('display')" :class="cn(props.variant && cls.shortcode[props.variant])">
       {{ shortcode }}
     </span>
-    <span v-if="!props.variant?.startsWith('display')" :class="cn(props.variant ? cls.overline[props.variant] : '')" v-text="overline ? overline : ''" />
-    <br>
+    <span v-if="!props.variant?.startsWith('display')" :class="cn(props.variant && cls.overline[props.variant])" v-text="overline ? overline : ''" />
+    <br v-if="showEmptyOverline || props.overline || props.shortcode">
     <!-- span :class="cn(headingVariants({ variant }), props.class, '')" -->
     <span :class="cn(headingVariants({ variant }), props.class, '')">
       {{ headline }}
     </span>
     <br v-show="props.overline && props.variant?.startsWith('display')">
-    <span v-show="props.overline && props.variant?.startsWith('display')" :class="cn(props.variant ? cls.overline[props.variant] : '')" v-text="overline ? overline : ''" />
+    <span v-show="props.overline && props.variant?.startsWith('display')" :class="cn(props.variant && cls.overline[props.variant])" v-text="overline ? overline : ''" />
   </component>
-  <p v-if="subline" :class="cn(props.variant ? cls.subline[props.variant] : '')">
+  <p v-if="subline" :class="cn(props.variant && cls.subline[props.variant])">
     {{ subline }}
   </p>
 </template>
@@ -26,6 +26,7 @@ import { cn } from '@/lib/utils';
 
 interface Props extends PrimitiveProps {
   shortcode?: string;
+  showEmptyOverline?: boolean;
   overline?: string;
   headline: string;
   subline?: string;
@@ -36,11 +37,12 @@ interface Props extends PrimitiveProps {
 const props = withDefaults(defineProps<Props>(), {
   as: 'h1',
   variant: 'default_sm',
+  showEmptyOverline: true,
 });
 
 const cls = {
   shortcode: {
-    small_xs: 'float-left text-xs md:text-5xl md:leading-[1.1em] font-bold mr-1',
+    small_xs: 'leading-none md:leading-none md:mb-none md:float-left text-xs md:text-5xl md:leading-[1.1em] font-bold mr-1',
     small_md: 'float-left text-4xl leading-[0.96em] font-bold mr-1.5',
     default_sm: 'float-left text-sm md:text-[56px] md:leading-[1em] font-bold mr-2',
     default_lg: 'float-left text-[62px] leading-[0.96em] font-bold mr-2.5',
