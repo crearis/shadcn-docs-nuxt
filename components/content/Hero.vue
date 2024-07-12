@@ -16,8 +16,14 @@
       </span>
       <Icon name="lucide:arrow-right" class="ml-1 h-4 w-4" />
     </NuxtLink>
+
+    <!--optionally provide margin to the upper part of the page-heading (breadcrumbs)-->
     <div v-show="announcement?.title === undefined && (showEmptyOverlineWithoutAnnouncement || heading.overline || heading.shortcode)" class="mt-2 md:mt-3 lg:mt-4" />
+    
+    <!--differently rendersettings for heading on mobile, tablet, desktop-->
     <LayoutHeading v-if="useViewport().isGreaterThan('tablet')" :variant="(props.size === 'default') ? 'default_lg' : (props.size === 'display' ? 'display_xl' : 'small_md')" :show-empty-overline="announcement?.title !== undefined || showEmptyOverlineWithoutAnnouncement" :shortcode="heading.shortcode" :headline="heading.headline" :overline="heading.overline" :subline="heading.subline" :class="props.size !== 'small' ? 'uppercase' : ''" />
+    
+    <!--on mobile if we need to show shortcode we reduce sizes 'display' and 'default' to 'small'-->
     <LayoutHeading v-else-if="useViewport().isLessThan('tablet')" :variant="(props.size === 'small' || props.heading.shortcode ? 'small_xs' : props.size === 'default' ? 'default_sm' : 'display_md')" :show-empty-overline="announcement?.title !== undefined || showEmptyOverlineWithoutAnnouncement" :shortcode="heading.shortcode" :headline="heading.headline" :overline="heading.overline" :subline="heading.subline" :class="props.size !== 'small' ? 'uppercase' : ''" />
     <LayoutHeading v-else :variant="(props.size === 'default' ? 'default_sm' : props.size === 'display' ? 'display_md' : 'default_sm')" :shortcode="heading.shortcode" :headline="heading.headline" :show-empty-overline="announcement?.title !== undefined || showEmptyOverlineWithoutAnnouncement" :overline="heading.overline" :subline="heading.subline" :class="props.size !== 'small' ? 'uppercase' : ''" />
 
