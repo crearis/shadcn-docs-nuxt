@@ -3,7 +3,7 @@ title: Overline Overline | Headline Headline
 navigation: false
 ---
 
-::hero
+::heroClassic
 ---
 announcement:
   title: 'Release v0.3.1'
