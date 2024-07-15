@@ -1,5 +1,5 @@
 <template>
-  <h2 :id="id" class="scroll-m-20 border-b pb-2 font-semibold tracking-tight transition-colors [&:not(:first-child)]:mt-10" :class="twprose ? '' : 'text-2xl lg:text-3xl'">
+  <h2 :id="id" class="scroll-m-20 transition-colors [&:not(:first-child)]:mt-10" :class="noprose ? 'pb-2 font-semibold tracking-tight text-2xl lg:text-3xl border-b' : ''">
     <NuxtLink
       v-if="id && generate"
       :href="`#${id}`"
@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{ id?: string; twprose?: boolean }>();
+const props = defineProps<{ id?: string; noprose?: boolean }>();
 
 const { headings } = useRuntimeConfig().public.mdc;
 const generate = computed(() => props.id && headings?.anchorLinks?.h2);

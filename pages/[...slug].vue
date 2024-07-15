@@ -21,7 +21,7 @@
       v-else
       :key="page._id"
       :value="page"
-      class="docs-content"
+      class="prose prose-sm lg:prose-base"
     />
   </NuxtLayout>
 </template>
