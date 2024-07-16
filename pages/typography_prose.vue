@@ -1,12 +1,232 @@
 <template>
   <LayoutHeader />
   <div class="container ml-10 px-4 md:px-8 py-6">
-    <div>
+    <div class="prose prose-base">
+      <h1 class="">
+        <strong class="">Dokumentation Typographie</strong>
+        <span>Markdown-basierte Headings direkt im Schreibfluss erzeugen</span>
+      </h1>
       <p>
-        ein in 2022-2023 umgesetzter Design-Prozess hat die verschiedensten Anforderungen und Use-Cases ermittelt und dazu mehrere Design-Vorlagen entwickelt
+        Beschreibung
       </p>
+    </div>
+
+    <div class="prose prose-base mt-16">
+      <h1 class="">
+        <em class="">H1 Variants</em>
+      </h1>
       <p>
-        ausgehend von Javascript-Component-Frameworks und Obsidian-Themes werden diese Design-Vorlagen weiterentwickelt und angepasst mit dem Ziel einer hohen technischen wie inhaltlichen Qualität
+        Formatierung erfolgt mit Variierung von Overline-Headline-Shortcode
+      </p>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <h1 class="">
+          Szenische Themenarbeit mit kreativen Bildern
+        </h1>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">h1 Parameter (Desktop small=prose-base)
+  - SC: 72px / Line-Height: 0.8215
+  - HL: 40px / Line-Height: 0.9375
+  - OL: 18px / Line-Height: 1.25
+  - TAG/Mark: 12px / Line-Height: 1.25
+      </pre>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <h1 class="">
+          Szenische Themenarbeit mit kreativen Bildern
+        </h1>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">A: h1 default (Overline)
+  -
+      </pre>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <h1 class="">
+          <strong>Klischees, Situationen & Skulpturen</strong>
+        </h1>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">B: h1 strong
+  -
+      </pre>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <h1 class="">
+          <em>Klischees, Situationen & Skulpturen</em>
+        </h1>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">C: h1 display
+  -
+      </pre>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <h1 class="">
+          Szenische Themenarbeit mit kreativen Bildern
+        </h1>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">D: h1 Overline-Headline
+  -
+      </pre>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <h1 class="">
+          <strong>Klischees, Situationen & Skulpturen</strong>
+          Szenische Themenarbeit mit kreativen Bildern
+        </h1>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">E1: h1 Headline-Subline
+  -
+      </pre>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <h1 class="">
+          <strong>Klischees, Situationen & Skulpturen</strong>
+          <span>Szenische Themenarbeit mit kreativen Bildern</span>
+        </h1>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">E2: h1 Headline-Underline
+  -
+      </pre>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <h1 class="">
+          <em>B2</em>
+          Szenische Themenarbeit mit kreativen Bildern
+          <strong>Klischees, Situationen & Skulpturen</strong>
+        </h1>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">F: h1 Shortcode-Overline-Headline
+  -
+      </pre>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <h1 class="">
+          <em>B2</em>
+          <strong>Klischees, Situationen & Skulpturen</strong>
+          Szenische Themenarbeit mit kreativen Bildern
+        </h1>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">G: h1 Shortcode-Headline-Subline
+  -
+      </pre>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <h1 class="">
+          <mark class="font-mona">17.-19.1 (Nbg)</mark>
+          <strong>Klischees, Situationen & Skulpturen</strong>
+        </h1>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">H: h1 Tag-Headline
+  -
+      </pre>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <h1 class="">
+          <em>B2</em>
+          <mark class="font-mona">17.-19.1 Nbg</mark>
+          Szenische Themenarbeit mit kreativen Bildern
+          <strong>Klischees, Situationen & Skulpturen</strong>
+        </h1>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">I: h1 Shortcode-Tag-Overline-Headline
+  -
+      </pre>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <h1 class="">
+          <em>B2</em>
+          <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
+          <mark class="font-mona">17.-19.1 (Nbg)</mark>
+          Szenische Themenarbeit mit kreativen Bildern
+        </h1>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">J: h1 Shortcode-Headline-Tag-Subline
+  -
+      </pre>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <h1 class="">
+          <em>B2</em>
+          <mark class="font-mona">17.-19.1 (Nbg)</mark>
+          Szenische Themenarbeit mit kreativen Bildern
+          <strong>Klischees, Situationen & Skulpturen</strong>
+        </h1>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">XX: h1 TEMPLATE
+  -
+      </pre>
+    </div>
+
+    <div class="prose prose-base mt-32">
+      <h2 class="">
+        <em class="">H2 Variants</em>
+      </h2>
+      <p>
+        Formatierung erfolgt mit Variierung von Overline-Headline-Shortcode
       </p>
     </div>
 
@@ -19,7 +239,7 @@
           Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
         </p>
       </div>
-      <pre class="docs w-[300]">H2 Grundlagen
+      <pre class="docs w-[300]">H2 Parameter (Desktop small=prose-base)
   - SC: 56px / Line-Height: 0.8215
   - HL: 24px / Line-Height: 0.9375
   - OL: 18px / Line-Height: 1.25
@@ -192,6 +412,218 @@
         </p>
       </div>
       <pre class="docs w-[300]">XX: H2 TEMPLATE
+  -
+      </pre>
+    </div>
+
+    <div class="prose prose-base mt-32">
+      <H3 class="">
+        <em class="">H3 Variants</em>
+      </H3>
+      <p>
+        Formatierung erfolgt mit Variierung von Overline-Headline-Shortcode
+      </p>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <H3 class="">
+          Szenische Themenarbeit mit kreativen Bildern
+        </H3>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">H3 Parameter (Desktop small=prose-base)
+  - SC: 48px / Line-Height: ?0.8215?
+  - HL: 20px / Line-Height: ?0.9375?
+  - OL: 16px / Line-Height: ?
+  - TAG/Mark: 12px / Line-Height: ?
+      </pre>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <H3 class="">
+          Szenische Themenarbeit mit kreativen Bildern
+        </H3>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">A: H3 default (Overline)
+  -
+      </pre>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <H3 class="">
+          <strong>Klischees, Situationen & Skulpturen</strong>
+        </H3>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">B: H3 strong
+  -
+      </pre>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <H3 class="">
+          <em>Klischees, Situationen & Skulpturen</em>
+        </H3>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">C: H3 display
+  -
+      </pre>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <H3 class="">
+          Szenische Themenarbeit mit kreativen Bildern
+        </H3>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">D: H3 Overline-Headline
+  -
+      </pre>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <H3 class="">
+          <strong>Klischees, Situationen & Skulpturen</strong>
+          Szenische Themenarbeit mit kreativen Bildern
+        </H3>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">E1: H3 Headline-Subline
+  -
+      </pre>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <H3 class="">
+          <strong>Klischees, Situationen & Skulpturen</strong>
+          <span>
+            Szenische Themenarbeit mit kreativen Bildern
+          </span>
+        </H3>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">E2: H3 Headline-Underline
+  -
+      </pre>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <H3 class="">
+          <em>B2</em>
+          Szenische Themenarbeit mit kreativen Bildern
+          <strong>Klischees, Situationen & Skulpturen</strong>
+        </H3>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">F: H3 Shortcode-Overline-Headline
+  -
+      </pre>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <H3 class="">
+          <em>B2</em>
+          <strong>Klischees, Situationen & Skulpturen</strong>
+          Szenische Themenarbeit mit kreativen Bildern
+        </H3>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">G: H3 Shortcode-Headline-Subline
+  -
+      </pre>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <H3 class="">
+          <mark class="font-mona">17.-19.1 (Nbg)</mark>
+          <strong>Klischees, Situationen & Skulpturen</strong>
+        </H3>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">H: H3 Tag-Headline
+  -
+      </pre>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <H3 class="">
+          <em>B2</em>
+          <mark class="font-mona">17.-19.1 Nbg</mark>
+          Szenische Themenarbeit mit kreativen Bildern
+          <strong>Klischees, Situationen & Skulpturen</strong>
+        </H3>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">I: H3 Shortcode-Tag-Overline-Headline
+  -
+      </pre>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <H3 class="">
+          <em>B2</em>
+          <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
+          <mark class="font-mona">17.-19.1 (Nbg)</mark>
+          Szenische Themenarbeit mit kreativen Bildern
+        </H3>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">J: H3 Shortcode-Headline-Tag-Subline
+  -
+      </pre>
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="prose prose-base">
+        <H3 class="">
+          <em>B2</em>
+          <mark class="font-mona">17.-19.1 (Nbg)</mark>
+          Szenische Themenarbeit mit kreativen Bildern
+          <strong>Klischees, Situationen & Skulpturen</strong>
+        </H3>
+        <p>
+          Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
+        </p>
+      </div>
+      <pre class="docs w-[300]">XX: H3 TEMPLATE
   -
       </pre>
     </div>

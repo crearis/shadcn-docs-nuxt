@@ -6,7 +6,7 @@
       <aside :class="isDasei ? 'top-0 ' : '-ml-2 top-[102px] lg:top-[60px]'" class="fixed z-30 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 md:sticky md:block overflow-y-auto">
         <LayoutMenuAside :is-mobile="false" />
       </aside>
-      <main class="relative py-6" :class="[config.toc.enable && 'lg:gap-10 lg:py-8 lg:grid lg:grid-cols-[1fr_200px]']">
+      <main class="relative py-6" :class="[isDasei ? config.toc.enable && 'min-[1120px]:gap-10 min-[1120px]:py-8 min-[1120px]:grid min-[1120px]:grid-cols-[1fr_200px]' : config.toc.enable && 'lg:gap-10 lg:py-8 lg:grid lg:grid-cols-[1fr_200px]']">
         <div class="mx-auto w-full min-w-0">
           <LayoutBreadcrumb v-if="page?.body && config.main.breadCrumb" class="mb-4" />
 
@@ -14,7 +14,7 @@
 
           <LayoutPrevNext />
         </div>
-        <div v-if="config.toc.enable" class="hidden text-sm lg:block">
+        <div v-if="config.toc.enable" class="hidden text-sm" :class="isDasei ? 'min-[1120px]:block' : 'lg:block'">
           <div class="sticky top-[90px] h-[calc(100vh-3.5rem)] overflow-hidden">
             <LayoutToc :is-small="false" />
           </div>
