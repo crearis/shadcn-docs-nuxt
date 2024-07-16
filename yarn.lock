@@ -790,10 +790,31 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/retry/-/retry-0.2.4.tgz#4f3059423823bd8176132ceea9447dee101dfac1"
   integrity sha512-Ttl/jHpxfS3st5sxwICYfk4pOH0WrLI1SpW283GgQL7sCWU7EHIOhX4b4fkIxr3tkfzwg8+FNojtzsIEE7Ecgg==
 
+"@iconify-json/heroicons@^1.1.22":
+  version "1.1.22"
+  resolved "https://registry.yarnpkg.com/@iconify-json/heroicons/-/heroicons-1.1.22.tgz#9896d648631a0f25cb3c0ca24d9f5394a22d1def"
+  integrity sha512-UNfSBdD/JBYBvFFhce6e3FsmeqshGz8u964R36npJvIzuORhIHUXrFerulBWFmbG0V1xvMqLZVZc4bPyjP5p7A==
+  dependencies:
+    "@iconify/types" "*"
+
+"@iconify-json/logos@^1.1.43":
+  version "1.1.43"
+  resolved "https://registry.yarnpkg.com/@iconify-json/logos/-/logos-1.1.43.tgz#9e4f08a5c013a65bd926e3713328233e20ff3a2e"
+  integrity sha512-UtvL1yDHUr9dl1Tqihh6K9m5dmbYKOYyLf3i9aKhymSW76QjOCGjpgQc0PQ4GJCAdU1cAMu+WO61TgPxdonrlg==
+  dependencies:
+    "@iconify/types" "*"
+
 "@iconify-json/lucide@^1.1.195":
   version "1.1.196"
   resolved "https://registry.yarnpkg.com/@iconify-json/lucide/-/lucide-1.1.196.tgz#e487de36f730b9c4f3c9d5609893d11ea2ab120a"
   integrity sha512-yYIeBbe1cdDfXoaocr7Na4QI8Up3h7gtVvITKarGUcJCaj1AdJf8lUS8LNtHFfVyEHxqSVDjfGsTL05L81aKSg==
+  dependencies:
+    "@iconify/types" "*"
+
+"@iconify-json/vscode-icons@^1.1.35":
+  version "1.1.35"
+  resolved "https://registry.yarnpkg.com/@iconify-json/vscode-icons/-/vscode-icons-1.1.35.tgz#9f77c11ebb07952f2525d345cf318dd5a0442146"
+  integrity sha512-mUootLfDN4M9u5CL+gjJIGoVo/IaTGRo3WnysNTqTf9T5vkoe+EscJkx9aLbLs6gjSPQ+449SyuyTbBaF+nXww==
   dependencies:
     "@iconify/types" "*"
 
@@ -2011,16 +2032,6 @@
   integrity sha512-YNlnKRWF2sVojTpIyzwou9XoTNbzbzONwRhOoniEioF1AtaitTvVZblaQRrAzChWQ1bLYyYSWzM18y4WwgzJ+A==
   dependencies:
     tslib "^2.4.0"
-
-"@tailwindcss/typography@^0.5.13":
-  version "0.5.13"
-  resolved "https://registry.yarnpkg.com/@tailwindcss/typography/-/typography-0.5.13.tgz#cd788a4fa4d0ca2506e242d512f377b22c1f7932"
-  integrity sha512-ADGcJ8dX21dVVHIwTRgzrcunY6YY9uSlAHHGVKvkA+vLc5qLwEszvKts40lx7z0qc4clpjclwLeK5rVCV2P/uw==
-  dependencies:
-    lodash.castarray "^4.4.0"
-    lodash.isplainobject "^4.0.6"
-    lodash.merge "^4.6.2"
-    postcss-selector-parser "6.0.10"
 
 "@tanstack/virtual-core@3.8.1":
   version "3.8.1"
