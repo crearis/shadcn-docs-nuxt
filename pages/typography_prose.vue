@@ -417,9 +417,9 @@
     </div>
 
     <div class="prose prose-base mt-32">
-      <H3 class="">
+      <h3 class="">
         <em class="">H3 Variants</em>
-      </H3>
+      </h3>
       <p>
         Formatierung erfolgt mit Variierung von Overline-Headline-Shortcode
       </p>
@@ -427,9 +427,9 @@
 
     <div class="mt-8 flex">
       <div class="prose prose-base">
-        <H3 class="">
+        <h3 class="">
           Szenische Themenarbeit mit kreativen Bildern
-        </H3>
+        </h3>
         <p>
           Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
         </p>
@@ -444,9 +444,9 @@
 
     <div class="mt-8 flex">
       <div class="prose prose-base">
-        <H3 class="">
+        <h3 class="">
           Szenische Themenarbeit mit kreativen Bildern
-        </H3>
+        </h3>
         <p>
           Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
         </p>
@@ -458,9 +458,9 @@
 
     <div class="mt-8 flex">
       <div class="prose prose-base">
-        <H3 class="">
+        <h3 class="">
           <strong>Klischees, Situationen & Skulpturen</strong>
-        </H3>
+        </h3>
         <p>
           Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
         </p>
@@ -472,9 +472,9 @@
 
     <div class="mt-8 flex">
       <div class="prose prose-base">
-        <H3 class="">
+        <h3 class="">
           <em>Klischees, Situationen & Skulpturen</em>
-        </H3>
+        </h3>
         <p>
           Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
         </p>
@@ -486,9 +486,9 @@
 
     <div class="mt-8 flex">
       <div class="prose prose-base">
-        <H3 class="">
+        <h3 class="">
           Szenische Themenarbeit mit kreativen Bildern
-        </H3>
+        </h3>
         <p>
           Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
         </p>
@@ -500,10 +500,10 @@
 
     <div class="mt-8 flex">
       <div class="prose prose-base">
-        <H3 class="">
+        <h3 class="">
           <strong>Klischees, Situationen & Skulpturen</strong>
           Szenische Themenarbeit mit kreativen Bildern
-        </H3>
+        </h3>
         <p>
           Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
         </p>
@@ -515,12 +515,12 @@
 
     <div class="mt-8 flex">
       <div class="prose prose-base">
-        <H3 class="">
+        <h3 class="">
           <strong>Klischees, Situationen & Skulpturen</strong>
           <span>
             Szenische Themenarbeit mit kreativen Bildern
           </span>
-        </H3>
+        </h3>
         <p>
           Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
         </p>
@@ -532,11 +532,11 @@
 
     <div class="mt-8 flex">
       <div class="prose prose-base">
-        <H3 class="">
+        <h3 class="">
           <em>B2</em>
           Szenische Themenarbeit mit kreativen Bildern
           <strong>Klischees, Situationen & Skulpturen</strong>
-        </H3>
+        </h3>
         <p>
           Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
         </p>
@@ -548,11 +548,11 @@
 
     <div class="mt-8 flex">
       <div class="prose prose-base">
-        <H3 class="">
+        <h3 class="">
           <em>B2</em>
           <strong>Klischees, Situationen & Skulpturen</strong>
           Szenische Themenarbeit mit kreativen Bildern
-        </H3>
+        </h3>
         <p>
           Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
         </p>
@@ -564,10 +564,10 @@
 
     <div class="mt-8 flex">
       <div class="prose prose-base">
-        <H3 class="">
+        <h3 class="">
           <mark class="font-mona">17.-19.1 (Nbg)</mark>
           <strong>Klischees, Situationen & Skulpturen</strong>
-        </H3>
+        </h3>
         <p>
           Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
         </p>
@@ -579,12 +579,12 @@
 
     <div class="mt-8 flex">
       <div class="prose prose-base">
-        <H3 class="">
+        <h3 class="">
           <em>B2</em>
           <mark class="font-mona">17.-19.1 Nbg</mark>
           Szenische Themenarbeit mit kreativen Bildern
           <strong>Klischees, Situationen & Skulpturen</strong>
-        </H3>
+        </h3>
         <p>
           Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
         </p>
@@ -596,12 +596,12 @@
 
     <div class="mt-8 flex">
       <div class="prose prose-base">
-        <H3 class="">
+        <h3 class="">
           <em>B2</em>
           <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
           <mark class="font-mona">17.-19.1 (Nbg)</mark>
           Szenische Themenarbeit mit kreativen Bildern
-        </H3>
+        </h3>
         <p>
           Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
         </p>
@@ -613,12 +613,12 @@
 
     <div class="mt-8 flex">
       <div class="prose prose-base">
-        <H3 class="">
+        <h3 class="">
           <em>B2</em>
           <mark class="font-mona">17.-19.1 (Nbg)</mark>
           Szenische Themenarbeit mit kreativen Bildern
           <strong>Klischees, Situationen & Skulpturen</strong>
-        </H3>
+        </h3>
         <p>
           Wir lernen, Einstiege und Ausstiege mit spielerischen Standbildern zu gestalten, innere Haltungen, Veränderungen und Ergebnisse sichtbar zu machen.
         </p>
