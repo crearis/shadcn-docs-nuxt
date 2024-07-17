@@ -37,8 +37,10 @@ export default defineNuxtConfig({
   },
 
   googleFonts: {
-    Roboto: true,
-    Inter: [400, 700], // Options
+    families: {
+      Roboto: true,
+      Inter: [400, 700],
+    }
   },
 
   colorMode: {
