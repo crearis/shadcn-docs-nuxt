@@ -1,448 +1,450 @@
 <template>
-  <LayoutHeader />
-  <div class="container ml-10 px-4 md:px-8 py-6">
-    <div class="prose prose-base">
-      <h1 class="">
-        <strong class="">Prose Objects</strong>
-        <span>MD-Heading-basierte Components</span>
-      </h1>
-      <p>
-        Beschreibung
-      </p>
-    </div>
-
-    <div class="prose prose-base mt-32">
-      <div class="prose-obj">
-        <em class="">PROSE-OBJ: BUTTONS</em>
-      </div>
-      <p>
-        Formatierung erfolgt mit Variierung von Overline-Headline-Shortcode
-      </p>
-    </div>
-
-    <div class="mt-8 flex">
-      <div class="w-[660px] prose prose-base">
-        <UiButton class="prose-obj">
-          Szenische Themenarbeit mit kreativen Bildern
-        </UiButton>
+  <NuxtLayout name="blank">
+    <LayoutHeader />
+    <div class="container ml-10 px-4 md:px-8 py-6">
+      <div class="prose prose-base">
+        <h1 class="">
+          <strong class="">Prose Objects</strong>
+          <span>MD-Heading-basierte Components</span>
+        </h1>
         <p>
-          -
+          Beschreibung
         </p>
       </div>
-      <pre class="docs w-[300px]">div .prose-obj Parameter (Desktop small=prose-base)
-  - SC: 40px / Line-Height: ?0.8215?
-  - HL: 16px / Line-Height: ?0.9375?
-  - OL: 14px / Line-Height: ?
-  - TAG/Mark: 11px / Line-Height: ?
-      </pre>
-    </div>
 
-    <div class="mt-8 flex">
-      <div class="w-[660px] prose prose-base">
-        <UiButton class="prose-obj">
-          Szenische Themenarbeit mit kreativen Bildern
-        </UiButton>
+      <div class="prose prose-base mt-32">
+        <div class="prose-obj">
+          <em class="">PROSE-OBJ: BUTTONS</em>
+        </div>
         <p>
-          -
+          Formatierung erfolgt mit Variierung von Overline-Headline-Shortcode
         </p>
       </div>
-      <pre class="docs w-[300px]">A: div .prose-obj default (Overline)
-  -
-      </pre>
-    </div>
 
-    <div class="mt-8 flex">
-      <div class="w-[660px] prose prose-base">
-        <UiButton class="prose-obj">
-          <strong>Klischees, Situationen & Skulpturen</strong>
-        </UiButton>
-        <p>
-          -
-        </p>
-      </div>
-      <pre class="docs w-[300px]">B: div .prose-obj strong
-  -
-      </pre>
-    </div>
-
-    <div class="mt-8 flex">
-      <div class="w-[660px] prose prose-base">
-        <UiButton class="prose-obj">
-          <em>Klischees, Situationen & Skulpturen</em>
-        </UiButton>
-        <p />
-      </div>
-      <pre class="docs w-[300px]">C: div .prose-obj display
-  -
-      </pre>
-    </div>
-
-    <div class="mt-8 flex">
-      <div class="w-[660px] prose prose-base">
-        <UiButton class="prose-obj text-left inline h-min">
-          <strong>Klischees, Situationen & Skulpturen</strong>
-          Szenische Themenarbeit mit kreativen Bildern
-        </UiButton>
-        <p>
-          -
-        </p>
-      </div>
-      <pre class="docs w-[300px]">E1: div .prose-obj Headline-Subline
-  -
-      </pre>
-    </div>
-
-    <div class="mt-8 flex">
-      <div class="w-[660px] prose prose-base">
-        <UiButton class="prose-obj text-left inline h-min bg-slate-100">
-          <strong>Klischees, Situationen & Skulpturen</strong>
-          <span>
+      <div class="mt-8 flex">
+        <div class="w-[660px] prose prose-base">
+          <UiButton class="prose-obj">
             Szenische Themenarbeit mit kreativen Bildern
-          </span>
-        </UiButton>
-        <p>
-          -
-        </p>
+          </UiButton>
+          <p>
+            -
+          </p>
+        </div>
+        <pre class="docs w-[300px]">div .prose-obj Parameter (Desktop small=prose-base)
+    - SC: 40px / Line-Height: ?0.8215?
+    - HL: 16px / Line-Height: ?0.9375?
+    - OL: 14px / Line-Height: ?
+    - TAG/Mark: 11px / Line-Height: ?
+        </pre>
       </div>
-      <pre class="docs w-[300px]">E2: div .prose-obj Headline-Underline
-  -
-      </pre>
-    </div>
 
-    <div class="mt-8 flex">
-      <div class="w-[660px] prose prose-base">
-        <UiButton class="prose-obj text-left inline h-min bg-slate-100">
-          <em>B2</em>
-          <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
-          <mark class="font-mona">17.-19.1 (Nbg)</mark>
-          Szenische Themenarbeit mit kreativen Bildern
-        </UiButton>
-        <p>
-          -
-        </p>
-      </div>
-      <pre class="docs w-[300px]">E2: div .prose-obj Headline-Underline
-  -
-      </pre>
-    </div>
-
-    <div class="mt-8 flex">
-      <div class="w-[660px] prose prose-base">
-        <UiButton class="prose-obj text-left inline h-min bg-slate-100">
-          <em>B2</em>
-          <mark class="font-mona">17.-19.1 (Nbg)</mark>
-          Szenische Themenarbeit mit kreativen Bildern
-          <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
-        </UiButton>
-        <p>
-          -
-        </p>
-      </div>
-      <pre class="docs w-[300px]">E2: div .prose-obj Headline-Underline
-  -
-      </pre>
-    </div>
-
-    <div class="prose prose-base mt-32">
-      <div class="prose-obj">
-        <em class="">PROSE-OBJ: ul/LI</em>
-      </div>
-      <p>
-        Formatierung erfolgt mit Variierung von Overline-Headline-Shortcode
-      </p>
-    </div>
-
-    <div class="mt-8 flex">
-      <div class="w-[660px] prose prose-base">
-        <ul class="prose-obj list-none">
-          <Li>
+      <div class="mt-8 flex">
+        <div class="w-[660px] prose prose-base">
+          <UiButton class="prose-obj">
             Szenische Themenarbeit mit kreativen Bildern
-          </Li>
-          <Li>
-            Szenische Themenarbeit mit kreativen Bildern
-          </Li>
-          <Li>
-            Szenische Themenarbeit mit kreativen Bildern
-          </Li>
-        </ul>
-        <p>
-          -
-        </p>
+          </UiButton>
+          <p>
+            -
+          </p>
+        </div>
+        <pre class="docs w-[300px]">A: div .prose-obj default (Overline)
+    -
+        </pre>
       </div>
-      <pre class="docs w-[300px]">div .prose-obj Parameter (Desktop small=prose-base)
-  - SC: 40px / Line-Height: ?0.8215?
-  - HL: 16px / Line-Height: ?0.9375?
-  - OL: 14px / Line-Height: ?
-  - TAG/Mark: 11px / Line-Height: ?
-      </pre>
-    </div>
 
-    <div class="mt-8 flex">
-      <div class="w-[660px] prose prose-base">
-        <ul class="prose-obj list-none">
-          <Li>
-            <strong>Szenische Themenarbeit mit kreativen Bildern</strong>
-          </Li>
-          <Li>
-            Szenische Themenarbeit mit kreativen Bildern
-          </Li>
-          <Li>
-            <em>Szenische Themenarbeit mit kreativen Bildern</em>
-          </Li>
-        </ul>
-        <p>
-          -
-        </p>
+      <div class="mt-8 flex">
+        <div class="w-[660px] prose prose-base">
+          <UiButton class="prose-obj">
+            <strong>Klischees, Situationen & Skulpturen</strong>
+          </UiButton>
+          <p>
+            -
+          </p>
+        </div>
+        <pre class="docs w-[300px]">B: div .prose-obj strong
+    -
+        </pre>
       </div>
-      <pre class="docs w-[300px]">B: LI .prose-obj strong - base - em
-  -
-      </pre>
-    </div>
 
-    <div class="mt-8 flex">
-      <div class="w-[660px] prose prose-lg">
-        <ul class="prose-obj">
-          <Li>
+      <div class="mt-8 flex">
+        <div class="w-[660px] prose prose-base">
+          <UiButton class="prose-obj">
+            <em>Klischees, Situationen & Skulpturen</em>
+          </UiButton>
+          <p />
+        </div>
+        <pre class="docs w-[300px]">C: div .prose-obj display
+    -
+        </pre>
+      </div>
+
+      <div class="mt-8 flex">
+        <div class="w-[660px] prose prose-base">
+          <UiButton class="prose-obj text-left inline h-min">
             <strong>Klischees, Situationen & Skulpturen</strong>
             Szenische Themenarbeit mit kreativen Bildern
-          </Li>
-          <Li>
-            <strong>Klischees, Situationen & Skulpturen</strong>
-            Szenische Themenarbeit mit kreativen Bildern
-          </Li>
-          <Li>
-            <strong>Klischees, Situationen & Skulpturen</strong>
-            Szenische Themenarbeit mit kreativen Bildern
-          </Li>
-        </ul>
-
-        <p>
-          -
-        </p>
+          </UiButton>
+          <p>
+            -
+          </p>
+        </div>
+        <pre class="docs w-[300px]">E1: div .prose-obj Headline-Subline
+    -
+        </pre>
       </div>
-      <pre class="docs w-[300px]">E1: Li .prose-obj Headline-Subline
-  - Size: prose-lg
-      </pre>
-    </div>
 
-    <div class="mt-8 flex">
-      <div class="w-[660px] prose prose-xl">
-        <ul class="prose-obj">
-          <li>
+      <div class="mt-8 flex">
+        <div class="w-[660px] prose prose-base">
+          <UiButton class="prose-obj text-left inline h-min bg-slate-100">
             <strong>Klischees, Situationen & Skulpturen</strong>
             <span>
               Szenische Themenarbeit mit kreativen Bildern
             </span>
-          </li>
-          <li>
-            <strong>Klischees, Situationen & Skulpturen</strong>
-            <span>
+          </UiButton>
+          <p>
+            -
+          </p>
+        </div>
+        <pre class="docs w-[300px]">E2: div .prose-obj Headline-Underline
+    -
+        </pre>
+      </div>
+
+      <div class="mt-8 flex">
+        <div class="w-[660px] prose prose-base">
+          <UiButton class="prose-obj text-left inline h-min bg-slate-100">
+            <em>B2</em>
+            <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
+            <mark class="font-mona">17.-19.1 (Nbg)</mark>
+            Szenische Themenarbeit mit kreativen Bildern
+          </UiButton>
+          <p>
+            -
+          </p>
+        </div>
+        <pre class="docs w-[300px]">E2: div .prose-obj Headline-Underline
+    -
+        </pre>
+      </div>
+
+      <div class="mt-8 flex">
+        <div class="w-[660px] prose prose-base">
+          <UiButton class="prose-obj text-left inline h-min bg-slate-100">
+            <em>B2</em>
+            <mark class="font-mona">17.-19.1 (Nbg)</mark>
+            Szenische Themenarbeit mit kreativen Bildern
+            <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
+          </UiButton>
+          <p>
+            -
+          </p>
+        </div>
+        <pre class="docs w-[300px]">E2: div .prose-obj Headline-Underline
+    -
+        </pre>
+      </div>
+
+      <div class="prose prose-base mt-32">
+        <div class="prose-obj">
+          <em class="">PROSE-OBJ: ul/LI</em>
+        </div>
+        <p>
+          Formatierung erfolgt mit Variierung von Overline-Headline-Shortcode
+        </p>
+      </div>
+
+      <div class="mt-8 flex">
+        <div class="w-[660px] prose prose-base">
+          <ul class="prose-obj list-none">
+            <Li>
               Szenische Themenarbeit mit kreativen Bildern
-            </span>
-          </li>
-          <li>
-            <strong>Klischees, Situationen & Skulpturen</strong>
-            <span>
+            </Li>
+            <Li>
               Szenische Themenarbeit mit kreativen Bildern
-            </span>
-          </li>
-        </ul>
-        <p>
-          -
-        </p>
+            </Li>
+            <Li>
+              Szenische Themenarbeit mit kreativen Bildern
+            </Li>
+          </ul>
+          <p>
+            -
+          </p>
+        </div>
+        <pre class="docs w-[300px]">div .prose-obj Parameter (Desktop small=prose-base)
+    - SC: 40px / Line-Height: ?0.8215?
+    - HL: 16px / Line-Height: ?0.9375?
+    - OL: 14px / Line-Height: ?
+    - TAG/Mark: 11px / Line-Height: ?
+        </pre>
       </div>
-      <pre class="docs w-[300px]">E2: Li .prose-obj Headline-Underline
-  - Size: prose-xl
-      </pre>
-    </div>
 
-    <div class="mt-8 flex">
-      <div class="w-[660px] prose prose-2xl">
-        <ul class="prose-obj text-left inline h-min bg-slate-100">
-          <li>
-            <em>B2</em>
-            <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
-            <mark class="font-mona">17.-19.1 (Nbg)</mark>
-            Szenische Themenarbeit mit kreativen Bildern
-          </li>
-          <li>
-            <em>B2</em>
-            <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
-            <mark class="font-mona">17.-19.1 (Nbg)</mark>
-            Szenische Themenarbeit mit kreativen Bildern
-          </li>
-          <li>
-            <em>B2</em>
-            <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
-            <mark class="font-mona">17.-19.1 (Nbg)</mark>
-            Szenische Themenarbeit mit kreativen Bildern
-          </li>
-        </ul>
-        <p>
-          -
-        </p>
+      <div class="mt-8 flex">
+        <div class="w-[660px] prose prose-base">
+          <ul class="prose-obj list-none">
+            <Li>
+              <strong>Szenische Themenarbeit mit kreativen Bildern</strong>
+            </Li>
+            <Li>
+              Szenische Themenarbeit mit kreativen Bildern
+            </Li>
+            <Li>
+              <em>Szenische Themenarbeit mit kreativen Bildern</em>
+            </Li>
+          </ul>
+          <p>
+            -
+          </p>
+        </div>
+        <pre class="docs w-[300px]">B: LI .prose-obj strong - base - em
+    -
+        </pre>
       </div>
-      <pre class="docs w-[300px]">
-  - Size: prose-2xl
-      </pre>
-    </div>
 
-    <div class="mt-8 flex">
-      <div class="w-[660px] prose prose-xl">
-        <ul class="prose-obj text-left inline h-min bg-slate-100">
-          <li>
-            <em>B2</em>
-            <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
-            <mark class="font-mona">17.-19.1 (Nbg)</mark>
-            Szenische Themenarbeit mit kreativen Bildern
-          </li>
-          <li>
-            <em>B2</em>
-            <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
-            <mark class="font-mona">17.-19.1 (Nbg)</mark>
-            Szenische Themenarbeit mit kreativen Bildern
-          </li>
-          <li>
-            <em>B2</em>
-            <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
-            <mark class="font-mona">17.-19.1 (Nbg)</mark>
-            Szenische Themenarbeit mit kreativen Bildern
-          </li>
-        </ul>
-        <p>
-          -
-        </p>
-      </div>
-      <pre class="docs w-[300px]">
-  - Size: prose-xl
-      </pre>
-    </div>
+      <div class="mt-8 flex">
+        <div class="w-[660px] prose prose-lg">
+          <ul class="prose-obj">
+            <Li>
+              <strong>Klischees, Situationen & Skulpturen</strong>
+              Szenische Themenarbeit mit kreativen Bildern
+            </Li>
+            <Li>
+              <strong>Klischees, Situationen & Skulpturen</strong>
+              Szenische Themenarbeit mit kreativen Bildern
+            </Li>
+            <Li>
+              <strong>Klischees, Situationen & Skulpturen</strong>
+              Szenische Themenarbeit mit kreativen Bildern
+            </Li>
+          </ul>
 
-    <div class="mt-8 flex">
-      <div class="w-[660px] prose prose-lg">
-        <ul class="prose-obj text-left inline h-min bg-slate-100">
-          <li>
-            <em>B2</em>
-            <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
-            <mark class="font-mona">17.-19.1 (Nbg)</mark>
-            Szenische Themenarbeit mit kreativen Bildern
-          </li>
-          <li>
-            <em>B2</em>
-            <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
-            <mark class="font-mona">17.-19.1 (Nbg)</mark>
-            Szenische Themenarbeit mit kreativen Bildern
-          </li>
-          <li>
-            <em>B2</em>
-            <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
-            <mark class="font-mona">17.-19.1 (Nbg)</mark>
-            Szenische Themenarbeit mit kreativen Bildern
-          </li>
-        </ul>
-        <p>
-          -
-        </p>
+          <p>
+            -
+          </p>
+        </div>
+        <pre class="docs w-[300px]">E1: Li .prose-obj Headline-Subline
+    - Size: prose-lg
+        </pre>
       </div>
-      <pre class="docs w-[300px]">
-  - Size: prose-lg
-      </pre>
-    </div>
 
-    <div class="mt-8 flex">
-      <div class="w-[660px] prose prose-base">
-        <ul class="prose-obj text-left inline h-min bg-slate-100">
-          <li>
-            <em>B2</em>
-            <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
-            <mark class="font-mona">17.-19.1 (Nbg)</mark>
-            Szenische Themenarbeit mit kreativen Bildern
-          </li>
-          <li>
-            <em>B2</em>
-            <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
-            <mark class="font-mona">17.-19.1 (Nbg)</mark>
-            Szenische Themenarbeit mit kreativen Bildern
-          </li>
-          <li>
-            <em>B2</em>
-            <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
-            <mark class="font-mona">17.-19.1 (Nbg)</mark>
-            Szenische Themenarbeit mit kreativen Bildern
-          </li>
-        </ul>
-        <p>
-          -
-        </p>
+      <div class="mt-8 flex">
+        <div class="w-[660px] prose prose-xl">
+          <ul class="prose-obj">
+            <li>
+              <strong>Klischees, Situationen & Skulpturen</strong>
+              <span>
+                Szenische Themenarbeit mit kreativen Bildern
+              </span>
+            </li>
+            <li>
+              <strong>Klischees, Situationen & Skulpturen</strong>
+              <span>
+                Szenische Themenarbeit mit kreativen Bildern
+              </span>
+            </li>
+            <li>
+              <strong>Klischees, Situationen & Skulpturen</strong>
+              <span>
+                Szenische Themenarbeit mit kreativen Bildern
+              </span>
+            </li>
+          </ul>
+          <p>
+            -
+          </p>
+        </div>
+        <pre class="docs w-[300px]">E2: Li .prose-obj Headline-Underline
+    - Size: prose-xl
+        </pre>
       </div>
-      <pre class="docs w-[300px]">
-  - Size: prose-base
-      </pre>
-    </div>
 
-    <div class="mt-8 flex">
-      <div class="w-[660px] prose prose-sm">
-        <ul class="prose-obj text-left inline h-min bg-slate-100">
-          <li>
-            <em>B2</em>
-            <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
-            <mark class="font-mona">17.-19.1 (Nbg)</mark>
-            Szenische Themenarbeit mit kreativen Bildern
-          </li>
-          <li>
-            <em>B2</em>
-            <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
-            <mark class="font-mona">17.-19.1 (Nbg)</mark>
-            Szenische Themenarbeit mit kreativen Bildern
-          </li>
-          <li>
-            <em>B2</em>
-            <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
-            <mark class="font-mona">17.-19.1 (Nbg)</mark>
-            Szenische Themenarbeit mit kreativen Bildern
-          </li>
-        </ul>
-        <p>
-          -
-        </p>
+      <div class="mt-8 flex">
+        <div class="w-[660px] prose prose-2xl">
+          <ul class="prose-obj text-left inline h-min bg-slate-100">
+            <li>
+              <em>B2</em>
+              <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
+              <mark class="font-mona">17.-19.1 (Nbg)</mark>
+              Szenische Themenarbeit mit kreativen Bildern
+            </li>
+            <li>
+              <em>B2</em>
+              <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
+              <mark class="font-mona">17.-19.1 (Nbg)</mark>
+              Szenische Themenarbeit mit kreativen Bildern
+            </li>
+            <li>
+              <em>B2</em>
+              <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
+              <mark class="font-mona">17.-19.1 (Nbg)</mark>
+              Szenische Themenarbeit mit kreativen Bildern
+            </li>
+          </ul>
+          <p>
+            -
+          </p>
+        </div>
+        <pre class="docs w-[300px]">
+    - Size: prose-2xl
+        </pre>
       </div>
-      <pre class="docs w-[300px]">
-  - Size: prose-sm
-      </pre>
-    </div>
 
-    <div class="mt-8 flex">
-      <div class="w-[660px] prose prose-base">
-        <ul class="prose-obj text-left inline h-min bg-slate-100">
-          <li>
-            <em>B2</em>
-            <mark class="font-mona">17.-19.1 (Nbg)</mark>
-            Szenische Themenarbeit mit kreativen Bildern
-            <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
-          </li>
-          <li>
-            <em>B2</em>
-            <mark class="font-mona">17.-19.1 (Nbg)</mark>
-            Szenische Themenarbeit mit kreativen Bildern
-            <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
-          </li>
-          <li>
-            <em>B2</em>
-            <mark class="font-mona">17.-19.1 (Nbg)</mark>
-            Szenische Themenarbeit mit kreativen Bildern
-            <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
-          </li>
-        </ul>
-        <p>
-          -
-        </p>
+      <div class="mt-8 flex">
+        <div class="w-[660px] prose prose-xl">
+          <ul class="prose-obj text-left inline h-min bg-slate-100">
+            <li>
+              <em>B2</em>
+              <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
+              <mark class="font-mona">17.-19.1 (Nbg)</mark>
+              Szenische Themenarbeit mit kreativen Bildern
+            </li>
+            <li>
+              <em>B2</em>
+              <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
+              <mark class="font-mona">17.-19.1 (Nbg)</mark>
+              Szenische Themenarbeit mit kreativen Bildern
+            </li>
+            <li>
+              <em>B2</em>
+              <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
+              <mark class="font-mona">17.-19.1 (Nbg)</mark>
+              Szenische Themenarbeit mit kreativen Bildern
+            </li>
+          </ul>
+          <p>
+            -
+          </p>
+        </div>
+        <pre class="docs w-[300px]">
+    - Size: prose-xl
+        </pre>
       </div>
-      <pre class="docs w-[300px]">-
-  -
-      </pre>
+
+      <div class="mt-8 flex">
+        <div class="w-[660px] prose prose-lg">
+          <ul class="prose-obj text-left inline h-min bg-slate-100">
+            <li>
+              <em>B2</em>
+              <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
+              <mark class="font-mona">17.-19.1 (Nbg)</mark>
+              Szenische Themenarbeit mit kreativen Bildern
+            </li>
+            <li>
+              <em>B2</em>
+              <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
+              <mark class="font-mona">17.-19.1 (Nbg)</mark>
+              Szenische Themenarbeit mit kreativen Bildern
+            </li>
+            <li>
+              <em>B2</em>
+              <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
+              <mark class="font-mona">17.-19.1 (Nbg)</mark>
+              Szenische Themenarbeit mit kreativen Bildern
+            </li>
+          </ul>
+          <p>
+            -
+          </p>
+        </div>
+        <pre class="docs w-[300px]">
+    - Size: prose-lg
+        </pre>
+      </div>
+
+      <div class="mt-8 flex">
+        <div class="w-[660px] prose prose-base">
+          <ul class="prose-obj text-left inline h-min bg-slate-100">
+            <li>
+              <em>B2</em>
+              <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
+              <mark class="font-mona">17.-19.1 (Nbg)</mark>
+              Szenische Themenarbeit mit kreativen Bildern
+            </li>
+            <li>
+              <em>B2</em>
+              <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
+              <mark class="font-mona">17.-19.1 (Nbg)</mark>
+              Szenische Themenarbeit mit kreativen Bildern
+            </li>
+            <li>
+              <em>B2</em>
+              <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
+              <mark class="font-mona">17.-19.1 (Nbg)</mark>
+              Szenische Themenarbeit mit kreativen Bildern
+            </li>
+          </ul>
+          <p>
+            -
+          </p>
+        </div>
+        <pre class="docs w-[300px]">
+    - Size: prose-base
+        </pre>
+      </div>
+
+      <div class="mt-8 flex">
+        <div class="w-[660px] prose prose-sm">
+          <ul class="prose-obj text-left inline h-min bg-slate-100">
+            <li>
+              <em>B2</em>
+              <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
+              <mark class="font-mona">17.-19.1 (Nbg)</mark>
+              Szenische Themenarbeit mit kreativen Bildern
+            </li>
+            <li>
+              <em>B2</em>
+              <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
+              <mark class="font-mona">17.-19.1 (Nbg)</mark>
+              Szenische Themenarbeit mit kreativen Bildern
+            </li>
+            <li>
+              <em>B2</em>
+              <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
+              <mark class="font-mona">17.-19.1 (Nbg)</mark>
+              Szenische Themenarbeit mit kreativen Bildern
+            </li>
+          </ul>
+          <p>
+            -
+          </p>
+        </div>
+        <pre class="docs w-[300px]">
+    - Size: prose-sm
+        </pre>
+      </div>
+
+      <div class="mt-8 flex">
+        <div class="w-[660px] prose prose-base">
+          <ul class="prose-obj text-left inline h-min bg-slate-100">
+            <li>
+              <em>B2</em>
+              <mark class="font-mona">17.-19.1 (Nbg)</mark>
+              Szenische Themenarbeit mit kreativen Bildern
+              <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
+            </li>
+            <li>
+              <em>B2</em>
+              <mark class="font-mona">17.-19.1 (Nbg)</mark>
+              Szenische Themenarbeit mit kreativen Bildern
+              <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
+            </li>
+            <li>
+              <em>B2</em>
+              <mark class="font-mona">17.-19.1 (Nbg)</mark>
+              Szenische Themenarbeit mit kreativen Bildern
+              <strong class="mb-0.5">Klischees, Situationen & Skulpturen</strong>
+            </li>
+          </ul>
+          <p>
+            -
+          </p>
+        </div>
+        <pre class="docs w-[300px]">-
+    -
+        </pre>
+      </div>
     </div>
-  </div>
-  <LayoutFooter />
+    <LayoutFooter />
+  </NuxtLayout>
 </template>
 
 <script setup lang="ts">
