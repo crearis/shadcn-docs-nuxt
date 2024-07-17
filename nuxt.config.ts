@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxthq/studio',
@@ -13,6 +14,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxtjs/google-fonts',
   ],
+
   shadcn: {
     /**
      * Prefix for all the imported component
@@ -24,6 +26,7 @@ export default defineNuxtConfig({
      */
     componentDir: './components/ui',
   },
+
   components: {
     dirs: [
       {
@@ -32,14 +35,18 @@ export default defineNuxtConfig({
       },
     ],
   },
+
   googleFonts: {
     Roboto: true,
     Inter: [400, 700], // Options
   },
+
   colorMode: {
     classSuffix: '',
   },
+
   css: ['@/assets/css/themes.css'],
+
   content: {
     documentDriven: true,
     highlight: {
@@ -58,6 +65,7 @@ export default defineNuxtConfig({
       },
     },
   },
+
   typescript: {
     tsConfig: {
       compilerOptions: {
@@ -65,4 +73,6 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  compatibilityDate: '2024-07-17',
 });
