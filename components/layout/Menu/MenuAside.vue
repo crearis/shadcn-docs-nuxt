@@ -30,7 +30,8 @@ const { navDirFromPath } = useContentHelpers();
 const { navigation } = useContent();
 const config = useConfig();
 
-const isDasei = config.value.theme.name === 'dasei';
+const { name } = useThemes();
+const isDasei = computed(() => name.value === 'dasei');
 
 const tree = computed(() => {
   const route = useRoute();

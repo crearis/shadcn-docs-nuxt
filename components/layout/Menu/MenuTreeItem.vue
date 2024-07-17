@@ -89,7 +89,8 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const { collapse } = useConfig().value.aside;
-const isDasei = useConfig().value.theme.name === 'dasei';
+const { name } = useThemes();
+const isDasei = computed(() => name.value === 'dasei');
 
 const collapsed = useCollapsedMap();
 const isOpen = ref(collapsed.value.get(props.link._path) || (props.level < 1 && !collapse));

@@ -22,5 +22,6 @@ defineProps<{
 
 const config = useConfig();
 const maxLevel = config.value.aside.maxLevel;
-const isDasei = config.value.theme.name === 'dasei';
+const { name } = useThemes();
+const isDasei = computed(() => name.value === 'dasei');
 </script>

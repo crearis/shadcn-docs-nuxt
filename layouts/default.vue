@@ -31,7 +31,8 @@
 const { page } = useContent();
 const config = useConfig();
 
-const isDasei = config.value.theme.name === 'dasei';
+const { name } = useThemes();
+const isDasei = computed(() => name.value === 'dasei');
 
 useSeoMeta({
   title: `${page.value?.title ?? '404'} - ${config.value.site.name}`,

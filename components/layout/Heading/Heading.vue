@@ -63,5 +63,6 @@ const subline = hasSubline ? props.content.split('**')[2].trim() : '';
 
 const component = `Prose${props.as}`;
 
-const isDasei = useConfig().value.theme.name === 'dasei';
+const { name } = useThemes();
+const isDasei = computed(() => name.value === 'dasei');
 </script>
