@@ -3,6 +3,7 @@ import { type Theme, themes } from '@/lib/registry/themes';
 interface Config {
   theme?: Theme['name'];
   radius: number;
+  name: string;
 }
 
 export function useThemes() {
@@ -13,12 +14,14 @@ export function useThemes() {
   const config = useCookie<Config>('theme', {
     default: () => ({
       theme: defaultTheme.color as Color,
-      radius: defaultTheme.radius
+      radius: defaultTheme.radius,
+      name: defaultTheme.name,
     }),
   });
 
   const theme = computed(() => config.value.theme);
   const radius = computed(() => config.value.radius);
+  const name = computed(() => config.value.name);
 
   const themeClass = computed(() => `theme-${theme.value}`);
 
@@ -28,6 +31,10 @@ export function useThemes() {
 
   function setRadius(newRadius: number) {
     config.value.radius = newRadius;
+  }
+
+  function setName(newName: string) {
+    config.value.name = newName;
   }
 
   const themePrimary = computed(() => {
@@ -42,5 +49,7 @@ export function useThemes() {
     radius,
     setRadius,
     themePrimary,
+    name,
+    setName,
   };
 }

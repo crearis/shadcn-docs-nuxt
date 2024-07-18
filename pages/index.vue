@@ -1,12 +1,14 @@
 <template>
-  <LayoutHeader />
-  <div class="container px-4 md:px-8 py-6">
-    <ContentRenderer
-      :key="page._id"
-      :value="page"
-    />
-  </div>
-  <LayoutFooter />
+  <NuxtLayout name="blank">
+    <LayoutHeader />
+    <div class="container px-4 md:px-8 py-6">
+      <ContentRenderer
+        :key="page._id"
+        :value="page"
+      />
+    </div>
+    <LayoutFooter />
+  </NuxtLayout>
 </template>
 
 <script setup lang="ts">

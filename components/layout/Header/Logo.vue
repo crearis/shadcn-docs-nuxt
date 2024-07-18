@@ -16,6 +16,7 @@ withDefaults(defineProps<{
 }>(), {
   variant: 'top',
 });
-const isDasei = useConfig().value.theme.name === 'dasei';
 const { logo, title, showTitle } = useConfig().value.header;
+const { name } = useThemes();
+const isDasei = computed(() => name.value === 'dasei');
 </script>

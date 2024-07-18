@@ -42,6 +42,10 @@
       </div>
     </div>
     <div class="space-y-1.5">
+      <UiLabel>Theme name</UiLabel>
+      <UiInput :modelValue="name" @change="setName($event.target.value)" />
+    </div>
+    <div class="space-y-1.5">
       <UiLabel>Theme</UiLabel>
       <div class="grid grid-cols-3 gap-2">
         <UiButton
@@ -79,7 +83,7 @@
 <script setup lang="ts">
 import { themes } from '@/lib/registry/themes';
 
-const { themeClass, theme, radius, setTheme, setRadius } = useThemes();
+const { themeClass, theme, radius, name, setTheme, setRadius, setName } = useThemes();
 
 // Create an array of color values
 const allColors: Color[] = [
