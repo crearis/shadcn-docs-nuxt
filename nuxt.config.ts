@@ -68,6 +68,15 @@ export default defineNuxtConfig({
     },
   },
 
+  // TODO: Activate once implemented
+  /*
+  nitro: {
+    plugins: [
+      'plugins/content.ts',
+    ],
+  },
+  */
+
   typescript: {
     tsConfig: {
       compilerOptions: {
