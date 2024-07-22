@@ -3,8 +3,7 @@ cssclasses:
   - paper
 title: "1. Whitepaper: Überblick"
 ---
-##  🔶 Theaterpedia - Zwischenstand 2024
-
+##  Zwischenstand 2024**Theaterpedia**
 
 > [!info] Disclaimer
 > Theaterpedia ist ein ambitioniertes Projekt. Es versucht die vorläufige und unvollständige Realisierung einer großen Idee. Diese noch größere Idee heißt **"Crearis"** und ist ähnlich z.B. zum Konzept des 'digital gardening'. Ziel ist es, eine offene, dezentrale und nachhaltige Vernetzung der Soziokultur im Internet zu erreichen abseits von Werbung, Tracking und sonstigen sekundären Kommerzialisierungen.

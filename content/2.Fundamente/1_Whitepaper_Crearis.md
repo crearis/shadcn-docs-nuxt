@@ -2,9 +2,10 @@
 cssclasses:
   - paper
 ---
+## **CREARIS**Creative Commons via Github / Odoo-over-Github
+> Github als dezentrales Markdown-Datenbank-System
 
-_Github als dezentrales Markdown-Datenbank-System_
-# CREARIS - "Creative Commons via Github" / Odoo-over-Github
+
 
 > [!info] Disclaimer
 > Das hier Beschriebe Konzept für Crearis dient nur für Orientierung und langfristige Roadmap bei der konkreten Umsetzung von Theaterpedia 2024. Dabei werden viele der Zusammenhänge nur in vereinfachter Form realisiert. Vor allem werden viele Blogging-Websites und Episoden **NICHT** durch einen Pandoc-basierten Rendering-Prozess serverbasiert generiert und publiziert. Stattdessen wird Content direkt mit einem Obsidian-Plugin erstellt. Wir achten jedoch möglichst auf Kompatibiltät mit den hier beschriebenen Konzepten.
