@@ -1,10 +1,65 @@
-// file-structure + hacks copied from: https://github.com/unjs/undocs/blob/main/app/server/plugins/content.ts
-// adapted to beforeParse-hook according to content.nuxt.com/recipes/hooks
+import consola from 'consola';
 
-import consola from "consola"
-
-// @ts-ignore
 export default defineNitroPlugin((nitroApp) => {
+  nitroApp.hooks.hook('content:file:beforeParse', (file) => {
+    // Filter out non-markdown files
+    if (!file._id?.endsWith('.md')) {
+      return;
+    }
+
+    // Filter out files without body
+    if (!file.body) {
+      return;
+    }
+
+    // don't index readme and other general tweaks
+    /* if (file._id === 'README.md') {
+      file.body = '---\nnavigation: false\n---'
+    }  */
+
+    // TODO: detect origin of file and apply transformation accordingly
+    const GENERATE_KEY = '<!-- CREARIS_PUBLISH -->';
+
+    try {
+      const start = Date.now();
+      consola.log(`Transforming Obsidian-file ${file._id} ...`);
+
+      if (!file.body.includes(GENERATE_KEY)) {
+        return console.warn(`Could not find ${GENERATE_KEY} in ${file._id}`);
+      }
+
+      // parse and replace transformation-tokens
+      const keys = ['tags', 'frontmatter', 'wikilinks', 'callouts'];
+      let parsed = file.body;
+
+      for (const key of keys) {
+        // for other options, see: https://github.com/awwaiid/thelackthereof/blob/8cd04743a16a9cfad82af3c6dcdb014e6fe8f979/lib/tweakMarkdown.js
+        switch (key) {
+          case 'tags':
+            // parsed = ??
+            // see:
+            break;
+
+          case 'frontmatter':
+            // parsed = parsed.replace(/---\n(.*)\n---/, '')
+            break;
+
+          case 'wikilinks':
+            // see: https://github.com/WiIIiam278/william278-site/blob/bdf6effedd2e6e7bb22ed60b703a41630b828309/server/plugins/wikilinks.js
+            break;
+
+          case 'callouts':
+            parsed = parseCallouts(parsed);
+            break;
+        }
+      }
+      consola.log(`... parsed in ${(Date.now() - start)} milli-seconds!`);
+      consola.log(parsed);
+      file.body = parsed;
+    } catch (err) {
+      console.error('Could not parse file', err);
+    }
+  });
   /* disabled for now
   nitroApp.hooks.hook('content:file:afterParse', (file: ContentFile) => {
     // Filter out non-markdown files
@@ -22,75 +77,18 @@ export default defineNitroPlugin((nitroApp) => {
       // transformJSDocs(idx, file.body?.children)
     }
   }) */
-  nitroApp.hooks.hook('content:file:beforeParse', (file: ContentFile) => {
-    // Filter out non-markdown files
-    if (!file._id?.endsWith('.md')) {
-      return
-    }
-
-    // Filter out files without body
-    if (!file.body) {
-      return
-    }
-
-    // don't index readme and other general tweaks
-    /* if (file._id === 'README.md') {
-      file.body = '---\nnavigation: false\n---'
-    }  */  
-
-    // TODO: detect origin of file and apply transformation accordingly
-    file.body = transformObsidianFile(file)
-
-  })  
-})
+});
 
 // -------------------
 // --- beforeParse ---
 
-function transformObsidianFile(file: ContentFile) {
-    // Generate the markdown from the schema
-  const GENERATE_KEY = '<!-- CREARIS_PUBLISH -->'
-
-  try {
-    const start = Date.now()
-    consola.log(`Transforming Obsidian-file ${file._id} ...`)
-
-    // @ts-expect-error incompleted types
-    if (!file.body.includes(GENERATE_KEY)) {
-      return console.warn(`Could not find ${GENERATE_KEY} in ${file._id}`)
-    }
-
-    // parse and replace transformation-tokens
-    const keys = ['frontmatter', 'wikilinks', 'callouts']
-    let parsed = file.body;
-
-    for (const key of keys) {
-
-      // for other options, see: https://github.com/awwaiid/thelackthereof/blob/8cd04743a16a9cfad82af3c6dcdb014e6fe8f979/lib/tweakMarkdown.js
-      switch (key) {
-        case 'frontmatter':
-          // parsed = parsed.replace(/---\n(.*)\n---/, '')
-          break
-        case 'wikilinks':
-          // see: https://github.com/WiIIiam278/william278-site/blob/bdf6effedd2e6e7bb22ed60b703a41630b828309/server/plugins/wikilinks.js
-
-          break
-        case 'callouts':
-          parsed = parseCallouts(parsed)
-          break
-      }
-    }
-    consola.log(`... parsed in ${(Date.now() - start)} milli-seconds!`)
-    return parsed
-
-  }
-  catch (err) {
-    console.error('Could not parse file', err)
-  }
-}
-
 // transform Obsidian-style callouts into Nuxt-Content-Components
-/* 
+
+// TODO: add support for inline-Variables + reference document-yaml in component-vars
+// - binding data in Markdown (inline-Variables) see here: https://content.nuxt.com/usage/markdown#binding-data-in-markdown
+// - reference document-yaml > support this notation:  ::alert{:type="type"}  - see here: https://content.nuxt.com/usage/markdown#inline-method
+
+/*
 - we follow the followind callouts-specification: https://publish.obsidian.md/slrvb-docs/ITS+Theme/Callouts/Callout+-+Columns
 - but change the attributes to make them vue-attributes-compatible > [!agenda|color=primary-dark variant=summary]
 
@@ -103,7 +101,6 @@ TAKES IN:
 >
 >> [!blank] Column 2
 >> Need that singular blockquote `>` as separation between columns
-
 
 RETURNS:
 ::agenda
@@ -129,65 +126,100 @@ Blah
 ::
 */
 
-
-/* 
-1. Find all callouts in the markdown, extract header and body
-- applies the regex from here: https://regexr.com/83ic7
-> (\[![^\n]*\][^\n]*)\n((>+[^\n]*\n)*)(?=[^>])/gm
-
-2. for every callout in the markdown
-2a. parse header: type, attributes, title
-- applies the regex from here: https://regexr.com/83igh
-\[!([^\n|\]]*)\] ?([^\n\]]*)|(?:\[!([^\n\]]*)\|([^\n]*)\]([^\n]*))/g
-
-Variant 1 = Group1 exists
-G1: type
-G2: title
-
-Variant 2 = Group1 empty
-G3: type
-G4: attributes
-G5: title
-
-2b. parse body:
-- deletion of '\n> ' 
-- replacement '\n>\n' by '\n\n'
-- replacement '>>' by '>'
-
-3. apply recursion for nested callouts
-
-4. return the parsed nuxt-content-component with nested components
-
-*/
-
-
-// OLD implementation
-// Match all ""> **Text:** Blah" and replace with the following. If the text is "Warning", then type should be warning:
-// ::notice
-// ----
-// title: Text
-// type: info
-// ----
-// Blah
-// ::
-
-//ts-expect-error incompleted types
-function parseCallouts(text) {
+// ts-expect-error incompleted types
+function parseCallouts(text: string, level: number = 0) {
+  consola.log('Parse callouts on level: ', level);
+  consola.log(text);
   let parsed = text;
 
-  const noticeRegex = /> \*\*([^\*]*)\*\* ([^\n]*)\n([^\n]*)\n/g;
-  const notices = parsed.matchAll(noticeRegex);
-  for (const notice of notices) {
-      const noticeTitle = notice[1];
-      const noticeType = noticeTitle.replace(":", "").toLowerCase() === 'warning' ? 'warning' : 'info';
-      const noticeBody = notice[2];
-      parsed = parsed.replace(notice[0], `::notice\n----\ntitle: '${noticeTitle}'\ntype: '${noticeType}'\n----\n\n${noticeBody}\n\n::\n`);
+  // make sure the text ends with a newline to avoid issues with the regex
+  if (!text.endsWith('\n')) {
+    parsed = `${text}\n`;
+  }
+
+  // stop execution if nesting-level > 3
+  if (level > 3) {
+    consola.error('Callout-nesting too deep (max allowed: 3), stopping execution');
+    return parsed;
+  }
+
+  // TODO: make regex 1 safer / regex 2 can evtl. be simplified (see lint-warnings)
+  const findCalloutsRegex = /> (\[![^\n\]]*\][^\n]*)\n((>[^\n]*\n)*)/g; // regex documented here: https://regexr.com/83ic7
+  const tag = `::${':'.repeat(level)}`;
+
+  // Find all callouts in the markdown, extract header and body
+  const callouts = parsed.matchAll(findCalloutsRegex);
+
+  // 2. for every callout in the markdown
+  for (const callout of callouts) {
+    const header = parseCalloutHeader(callout[1]);
+    const body = parseCalloutBody(callout[2], level);
+
+    if (!header) {
+      consola.error('Could not parse callout-header');
+      continue;
+    }
+    const newCallout = `${tag}${header.type}\n---\ntitle: '${header.title}'${header.attributes}\n---\n\n${body}\n\n${tag}\n`;
+    parsed = parsed.replace(callout[0], newCallout);
   }
   return parsed;
 }
 
+function parseCalloutHeader(header: string) {
+  // 2a. parse header: type, attributes, title
+  // TODO: regex should evtl. be simplified (see lint-warnings)
+  // - applies the regex from here: https://regexr.com/83igh
+  // const extractCalloutheaderRegex = /\[!([^\n|\]]*)\] ?([^\n\]]*)|\[!([^\n\]]*)\|([^\n]*)\]([^\n]*)/g;
+  const extractCalloutheaderRegex = /\[!([^\n|\]]*)\] ?([^\n\]]*)|\[!([^\n\]]*)\|([^\n]*)\]([^\n]*)/g;
 
+  const match = extractCalloutheaderRegex.exec(header);
+  if (!match) {
+    return null;
+  }
+  // Variant 1 = Group1 exists
+  // G1: type
+  // G2: title
+  // Variant 2 = Group1 empty
+  // G3: type
+  // G4: attributes
+  // G5: title
+  const type: string = (match[1] || match[3]).trim();
+  const title: string = (match[2] || match[5]).trim();
+  const attributes: string = match[4];
+  // if attributes exist, build array of key-value pairs
+  if (attributes) {
+    // TODO: detect potential errors in attributes
+    const attributesArray = attributes.split(' ').map((attr) => {
+      const [key, value] = attr.split('=');
+      return { key, value };
+    });
+    // rewrite attributes as string with YAML-attributes
+    const attributesString = attributesArray.map(attr => `\n${attr.key}: '${attr.value}'`).join('');
+    return { type, title, attributes: attributesString };
+  }
 
+  return { type, title, attributes: '' };
+}
+
+function parseCalloutBody(body: string, level: number) {
+  // add a newline at the beginning of the body to avoid issues with the first not matching the regex
+  if (body.length > 2 && body.startsWith('> '))
+    body = `\n${body}`;
+
+  // parse body:
+  // - deletion of '\n> '
+  // - replacement '\n>\n' by '\n\n'
+  // - replacement '>>' by '>'
+  let newBody = body.replace(/\n> /g, '\n').replace(/\n>\n/g, '\n\n').replace(/>>/g, '>');
+  // check if there are nested callouts and apply recursion
+  // - look whether there are '\n>' in the body
+  // - if so, apply recursion
+  if (/> \[/.exec(newBody)) {
+    newBody = parseCallouts(newBody, level + 1);
+  }
+  newBody = newBody.replace(/> /g, ''); // strip all leftover '>' from the body
+  return newBody;
+}
 
 // ---------------------
 // --- afterParse ---
@@ -197,14 +229,14 @@ function parseCallouts(text) {
 // Handle GitHub flavoured markdown blockquotes
 // https://github.com/orgs/community/discussions/16925
 function transformGithubAlert(node: ContentNode) {
-  const firstChildValue = node.children?.[0]?.children?.[0]?.children?.[0]?.value || ''
+  const firstChildValue = node.children?.[0]?.children?.[0]?.children?.[0]?.value || '';
   if (
-    node.tag === 'blockquote' && // blockquote > p x 2 > span > text
-    ['!NOTE', '!TIP', '!IMPORTANT', '!WARNING', '!CAUTION'].includes(firstChildValue)
+    node.tag === 'blockquote' // blockquote > p x 2 > span > text
+    && ['!NOTE', '!TIP', '!IMPORTANT', '!WARNING', '!CAUTION'].includes(firstChildValue)
   ) {
-    node.type = 'element'
-    node.tag = firstChildValue.slice(1).toLowerCase()
-    node.children?.[0].children?.shift()
+    node.type = 'element';
+    node.tag = firstChildValue.slice(1).toLowerCase();
+    node.children?.[0].children?.shift();
   }
 }
 
@@ -215,9 +247,9 @@ function transformStepsList(node: ContentNode) {
   // TODO: Find a way to opt out of this transformation if needed within markdown.
   if (node.tag === 'ol' && (node.children?.length || 0) > 0 && node.children?.[0].tag === 'li') {
     const stepsChildren = node.children.map((li) => {
-      const label = li.children?.[0]?.value ?? undefined
+      const label = li.children?.[0]?.value ?? undefined;
       // Exclude br tags from children to avoid spacing
-      const children = ((label && li.children?.slice(1)) || []).filter((child) => !['br'].includes(child.tag || ''))
+      const children = ((label && li.children?.slice(1)) || []).filter(child => !['br'].includes(child.tag || ''));
 
       return {
         type: 'element',
@@ -226,41 +258,40 @@ function transformStepsList(node: ContentNode) {
           label,
         },
         children,
-      }
-    })
+      };
+    });
 
     // For now we only check if there is at least (1) content to generate the steps..
-    const stepsHaveContent = stepsChildren.some((step) => step.children.length > 0)
+    const stepsHaveContent = stepsChildren.some(step => step.children.length > 0);
     if (stepsHaveContent) {
-      node.type = 'element'
-      node.tag = 'Steps'
-      node.props = {}
-      node.children = stepsChildren
+      node.type = 'element';
+      node.tag = 'Steps';
+      node.props = {};
+      node.children = stepsChildren;
     }
   }
 }
-
 
 // --- transform first h1 and blockquote ---
 
 function transformFile(file: ContentFile) {
   // Remove first h1 from markdown files as it is added to front-matter as title
   if (file.body?.children?.[0]?.tag === 'h1') {
-    const text = _getTextContents(file.body.children[0].children)
+    const text = _getTextContents(file.body.children[0].children);
     if (file.title === text) {
-      file.body.children.shift()
+      file.body.children.shift();
     }
   }
 
   // TODO: test this out from Obsidian
   // Only use the first blockquote as the description
-  const firstChild = file.body?.children?.[0]
-  const firstChildText = _getTextContents(firstChild?.children)
+  const firstChild = file.body?.children?.[0];
+  const firstChildText = _getTextContents(firstChild?.children);
   if (firstChild?.tag === 'blockquote' && firstChildText && !firstChildText.startsWith('!')) {
-    file.description = firstChildText
-    file.body?.children?.shift()
+    file.description = firstChildText;
+    file.body?.children?.shift();
   } else {
-    file.description = '' // Avoid duplication
+    file.description = ''; // Avoid duplication
   }
 }
 
@@ -268,9 +299,9 @@ function transformFile(file: ContentFile) {
 
 function resolveFileIcon(file: ContentFile) {
   if (file.icon) {
-    return
+    return;
   }
-  file.icon = _resolveIcon(file._path)
+  file.icon = _resolveIcon(file._path);
 }
 
 const _commonIcons = [
@@ -298,17 +329,17 @@ const _commonIcons = [
     pattern: 'utils',
     icon: 'ph:function-bold',
   },
-]
+];
 
 function _resolveIcon(path: string = '') {
   // Split the path into parts and reverse it
-  const paths = path.slice(1).split('/').reverse()
+  const paths = path.slice(1).split('/').reverse();
 
   // Search for icons in reverse order
   for (const p of paths) {
     for (const icon of _commonIcons) {
       if (p.includes(icon.pattern)) {
-        return icon.icon
+        return icon.icon;
       }
     }
   }
@@ -356,7 +387,6 @@ function _isNamedCodeBlock(children: ContentNode): boolean {
 }
 
 End of code-groups */
-
 
 /* JSDOCs-Import not needed for no
 // --- transform automd jsdocs ---
@@ -458,15 +488,15 @@ function _getTextContents(children: ContentNode[] = []): string {
   return (children || [])
     .map((child) => {
       if (child.type === 'element') {
-        return _getTextContents(child.children)
+        return _getTextContents(child.children);
       }
-      return child.value
+      return child.value;
     })
-    .join('')
+    .join('');
 }
 
 function _emptyASTNode() {
-  return { type: 'text', value: '' }
+  return { type: 'text', value: '' };
 }
 
 // --- types ---
@@ -474,21 +504,21 @@ function _emptyASTNode() {
 // TODO: @nuxt/content runtimes seems both not well typed and also crashes my TS server or might be doing it wrong.
 
 interface ContentNode {
-  type?: string
-  tag?: string
+  type?: string;
+  tag?: string;
 
-  children?: ContentNode[]
-  props?: Record<string, any>
-  value?: string
+  children?: ContentNode[];
+  props?: Record<string, any>;
+  value?: string;
 }
 
 interface ContentFile {
-  _id?: string
-  _path?: string
-  icon?: string
-  description?: string
-  title?: string
+  _id?: string;
+  _path?: string;
+  icon?: string;
+  description?: string;
+  title?: string;
   body: {
-    children?: ContentNode[]
-  }
+    children?: ContentNode[];
+  };
 }

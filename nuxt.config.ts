@@ -40,7 +40,7 @@ export default defineNuxtConfig({
     families: {
       Roboto: true,
       Inter: [400, 700],
-    }
+    },
   },
 
   colorMode: {
@@ -68,14 +68,11 @@ export default defineNuxtConfig({
     },
   },
 
-  // TODO: Activate once implemented
-  /*
   nitro: {
     plugins: [
       'plugins/content.ts',
     ],
   },
-  */
 
   typescript: {
     tsConfig: {
